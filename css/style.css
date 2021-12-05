@@ -1,0 +1,99 @@
+:root {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+body {
+    background-color: hsl(216, 54%, 11%);
+}
+
+.card {
+    
+    margin: auto ;
+    margin-top: 20px;
+    background-color: hsl(216, 50%, 16%);
+    width:35vh;
+    height: 63vh;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.title {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.description, .right {
+    color: hsl(215, 51%, 70%);
+}
+
+.left {
+    float: left;
+    color: hsl(178, 100%, 50%);
+    font-weight: 600;
+    background-image: url("../images/icon-ethereum.svg");
+    background-size: 10%;
+    background-repeat: no-repeat;
+    line-height: 18px;
+    height: 25px;
+    padding-left: 17px;
+}
+
+.right {
+    float: right;
+    background-image: url("../images/icon-clock.svg");
+    background-size: 19%;
+    background-repeat: no-repeat;
+    line-height: 18px;
+    height: 25px;
+    padding-left: 25px;
+    /* margin-left: 30%; */
+    font-weight: 600;
+
+}
+
+.line {
+    background-color: hsl(215, 32%, 27%);
+    width: 100%;
+    height: 1px;
+    clear: both;
+}
+
+.profile {
+    display: inline;
+    height: 18px;
+    /* padding-top: 18px; */
+    border-radius: 100%;
+    border: white solid 1.5px;
+}
+
+.create {
+    display: inline-block;
+    color: hsl(215, 51%, 70%);
+    padding-top: -5px;
+}
+.nft {
+    background: no-repeat center/100% url("../images/image-equilibrium.jpg");
+    height:35vh;
+    border-radius:7px;
+}
+
+.nft:hover {
+    background: no-repeat center/15% url("../images/icon-view.svg"), 
+    linear-gradient(
+        hsla(178, 100%, 50%, 0.603), 
+        hsla(178, 100%, 50%, 0.603)
+    ), 
+    no-repeat center/100% url("../images/image-equilibrium.jpg");
+    cursor: pointer; 
+}
+
+.title:hover, .name:hover {
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
+}
+
+.attribution {
+    padding-top: 40px;
+}
