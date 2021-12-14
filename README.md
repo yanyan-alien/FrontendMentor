@@ -14,6 +14,6 @@ This repository contains some challenges from [Frontend Mentors](https://www.fro
 
 |Name|Difficulty| Technologies / Approaches |
 |---|---|---|
-|  [NFT Card Preview Component](https://yanyan-alien.github.io/FrontendMentor/) | :star:   | HTML, CSS |
-|  [Stats Preview Card Component](https://yanyan-alien.github.io/FrontendMentor/) | :star:   | HTML, CSS, Mobile First |
-|  [Order Summary Component](https://yanyan-alien.github.io/FrontendMentor/) | :star:   | HTML, CSS, Mobile First |
+|  [NFT Card Preview Component](https://yanyan-alien.github.io/FrontendMentor/NFT%20Card%20Preview%20Component/index.html) | :star:   | HTML, CSS |
+|  [Stats Preview Card Component](https://yanyan-alien.github.io/FrontendMentor/Stats%20Preview%20Card%20Component/index.html) | :star:   | HTML, CSS, Mobile First |
+|  [Order Summary Component](https://yanyan-alien.github.io/FrontendMentor/order-summary-component-main/index.html) | :star:   | HTML, CSS, Mobile First |
