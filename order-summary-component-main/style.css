@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root {
+    --pale: hsl(225, 100%, 94%);
+    --bright: hsl(245, 75%, 52%);
+    --vpale: hsl(225, 100%, 98%);
+    --desaturated: hsl(224, 23%, 55%);
+    --dark: hsl(223, 47%, 23%);
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 500;
+}
+
+body {
+    margin: 0px;
+    height: 100vh;
+    background-image: url("./images/pattern-background-mobile.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #e0e8ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: var(--vpale);
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+    width: 80%;
+    height: 75vh;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+img {
+    width: 100%;
+}
+
+h1, .description, .plan {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+h1 {
+    font-weight: 900;
+    color: var(--dark);   
+    font-size: 25px;
+}
+
+.description {
+    color: var(--desaturated);
+}
+
+.plan {
+    background-image: url("./images/icon-music.svg");
+    background-repeat: no-repeat;
+    background-size: 15%;
+    background-position: 15px;
+    height: 14%;
+    background-color: #eff2ff;
+    border-radius: 10px;
+    padding-top: 1%;
+    margin-bottom: 5%;
+    text-align: left;
+    /* change the values of padding-left to percentage later on? */
+    padding-left: 70px; 
+    line-height: 12px;
+}
+
+.annual {
+    color: var(--dark);
+    font-weight: 900;
+}
+
+.price {
+    color: var(--desaturated);
+}
+
+.annual, .price {
+    position: relative;
+    top:6%;
+    left: 9%;
+}
+
+.plan a {
+    float: right;
+    color: var(--bright);
+    font-weight: 700;
+    position: relative;
+    right: 10%;
+    top: -35%;
+}
+
+.plan a:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+button {
+    margin-bottom: 5%;
+    font-weight: 700;
+    border: none;
+    font-size: 16px;
+}
+
+#pay {
+    background-color: var(--bright);
+    color: var(--vpale);    
+    height: 7%;
+    width: 80%;
+    font-weight: 700;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#pay:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+#cancel {
+    color: var(--desaturated);
+    background-color: var(--vpale);
+}
+
+#cancel:hover {
+    color: var(--dark);
+    cursor: pointer;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    margin-top: 1%; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (min-width:1000px) {
+    .card {
+        width: 30%;
+    }
+
+    body {
+        background-image: url("./images/pattern-background-desktop.svg");   
+    }
+}
