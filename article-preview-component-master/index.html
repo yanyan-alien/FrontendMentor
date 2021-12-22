@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Article preview component</title>
+  </head>
+  <body>
+    <div class="card">
+      <img class="drawer-image" src="./images/drawers.jpg" alt="drawers" />
+      <div class="text-container">
+        <h1>
+          Shift the overall look and feel by adding these wonderful touches to
+          furniture in your home
+        </h1>
+        <p>
+          Ever been in a room and felt like something was missing? Perhaps it
+          felt slightly bare and uninviting. I've got some simple tips to help
+          you make any room feel complete.
+        </p>
+        <div id="share-modal-desktop" hidden>
+          SHARE
+          <a href="#"><img class="share-modal-icons" src="./images/icon-facebook.svg" alt="facebook logo"/></a>
+          <a href="#"><img class="share-modal-icons" src="./images/icon-twitter.svg" alt="twitter logo"/></a>
+          <a href="#"><img class="share-modal-icons" src="./images/icon-pinterest.svg" alt=" logo"/></a>
+        </div>
+        <div id="acknowledgements">
+          <img
+            class="profile-picture"
+            src="./images/avatar-michelle.jpg"
+            alt="Michelle Appleton profile picture"
+          />
+          <p class="description">
+            <span class="name">Michelle Appleton</span><br />28 Jun 2020
+          </p>
+          <div id="icon-share" class="show">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Yan Qi</a>.
+    </div>
+    <script>
+      document
+        .getElementById("icon-share")
+        .addEventListener("click", share);
+      function share() {
+        document.getElementById("icon-share").classList.toggle('change');
+        if (window.matchMedia("(min-width: 1000px)").matches) {
+          document
+            .getElementById("share-modal-desktop")
+            .toggleAttribute("hidden");
+        } else {
+          document.getElementById("acknowledgements").classList.toggle("sharedack");
+        }
+      }
+    </script>
+  </body>
+</html>
