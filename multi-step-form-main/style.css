@@ -1,0 +1,232 @@
+@font-face {
+    font-family: 'Ubuntu';
+    font-weight: 400;
+    src: url('assets/fonts/Ubuntu-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    src: url('assets/fonts/Ubuntu-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    font-weight: 700;
+    src: url('assets/fonts/Ubuntu-Bold.ttf');
+}
+:root {
+    /* primary */
+    --marine-blue: hsl(213, 96%, 18%);
+    --purplish-blue: hsl(243, 100%, 62%);
+    --pastel-blue: hsl(228, 100%, 84%);
+    --light-blue: hsl(206, 94%, 87%);
+    --strawberry-red: hsl(354, 84%, 57%);
+
+    /* neutral */
+    --cool-gray: hsl(231, 11%, 63%);
+    --light-gray: hsl(229, 24%, 87%);
+    --Magnolia: hsl(217, 100%, 97%);
+    --alabaster: hsl(231, 100%, 99%);
+    --white: hsl(0, 0%, 100%);
+
+    /* font size */
+    --font-size: 16px;
+    --font-family: 'Ubuntu'
+}
+html, body {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: var(--font-size);
+    background-color: var(--pastel-blue);
+}
+#form-modal {
+  background-color: var(--white);
+}
+.description {
+  color: var(--cool-gray);
+}
+label {
+  color: var(--marine-blue);
+  display: inline-block;
+}
+input:not([type='checkbox']) {
+  display: block;
+  width: 100%;
+  padding: .375rem  .75rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--cool-gray);
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+input:active, input:focus, input:focus-visible {
+  border-color: var(--purplish-blue);
+  outline: none;
+}
+h2 {
+    font-weight: 700;
+    color: var(--marine-blue);
+}
+.formclass, .formtab {
+  height: 100%;
+  position: relative;
+}
+button.btn {
+  /* position: absolute; */
+  bottom: 0;
+}
+/* .form-tab {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.form-tab:not(.active) {
+  display: none;
+} */
+#sidebar {
+  background-image: url('assets/images/bg-sidebar-desktop.svg');
+  background-size: cover;
+  background-repeat: no-repeat; 
+  min-height: 568px;
+  max-width: 274px;
+  border-radius: 1rem;
+}
+#sidebar .step {
+  color: var(--alabaster);
+}
+.step-title {
+  font-weight: 500;
+}
+.planperiod {
+  background-color: var(--light-gray);
+}
+.btn-primary {
+  background-color: var(--marine-blue);
+  border-color: var(--marine-blue);
+  color: var(--Magnolia);
+}
+.btn-primary:focus, .btn-primary:active, .btn-primary:hover {
+  background-color: var(--purplish-blue);
+  border-color: var(--purplish-blue);
+}
+.col.plan button{
+  border: 1px solid var(--cool-gray);
+  background-color: var(--alabaster);
+  transition: border 0.2s linear;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.85rem;
+  border-radius: 0.5rem;
+}
+.addon-price {
+  float: right;
+  color: var(--purplish-blue);
+  font-weight: 500;
+}
+.addon-button {
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  text-align: initial;
+  min-height: 80px;
+}
+.addon-button input:checked[type=checkbox] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+.col.plan button:active, .col.plan button:focus, .col.plan button:hover {
+  border: 1px solid var(--purplish-blue);
+}
+.plan-description *{
+  display: inline-block;
+}
+.plan-title {
+  font-weight: 500;
+  color: var(--marine-blue);
+}
+.plan-price {
+  color: var(--cool-gray);
+}
+.step.step1::before {
+  content: '1';
+}
+
+.planperiod {
+  padding: 1.05rem;
+  border-radius: 0.5rem;
+}
+
+
+/* NAMING */
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+@media screen and (max-width:768px) {
+  #sidebar {
+    background-image: url('assets/images/bg-sidebar-mobile.svg');
+    min-height: 172px;
+    max-width: unset;
+  }
+}
