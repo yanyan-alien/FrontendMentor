@@ -9,12 +9,12 @@ function nextbutton(el) {
     var tabpane = el.closest('.form-tab')
     var id = tabpane.id
     var next = true
-    // console.log(id)
     switch (id) {
         case 'form-tab-1':
             next = validateStepOne()   
             break;
         case 'form-tab-2':
+            next = validateStepTwo()   
             storeStepThree()
             break;
         case 'form-tab-3':
@@ -58,10 +58,10 @@ function backbutton(el) {
 }
 /* BUTTONS FOR NEXT AND PREVIOUS (END)*/
 
-/* BUTTONS FOR CHANGE (CHANGE)*/
-function changebutton(el) {
-    var tabpane4 = document.getElementById('tab-pane-4')
-    var tabpane2 = document.getElementById('tab-pane-2')
+/* BUTTONS FOR CHANGE (START)*/
+function tab2(el) {
+    var tabpane4 = document.getElementById('form-tab-4')
+    var tabpane2 = document.getElementById('form-tab-2')
 
     var cur_circle = document.querySelector('.step' + 4 + ' .step-circle')
     var prev_circle = document.querySelector('.step' + 2 + ' .step-circle')
@@ -69,8 +69,8 @@ function changebutton(el) {
     tabpane4.classList.remove('active')
     cur_circle.classList.remove('active')  
     
-    tabpane2.classList.remove('active')
-    prev_circle.classList.remove('active')
+    tabpane2.classList.add('active')
+    prev_circle.classList.add('active')
 }
 /* BUTTONS FOR CHANGE (END)*/
 
@@ -83,7 +83,6 @@ function validateStepOne() {
     correct = true
 
     steponeinputs.forEach(el => {
-        // console.log(el.id)
         if (el.value == "") {
             el.classList.add('error')
             document.querySelector('span.' + el.id).classList.add('show')
@@ -101,7 +100,14 @@ function validateStepOne() {
 /* VALIDATE STEP 2 (START)*/
 // RETURN BOOLEAN VALUES
 function validateStepTwo(params) {
-    return true 
+    var buttons = document.querySelectorAll('.col.plan button')
+    planchosen = false
+    buttons.forEach(element => {
+        if (element.classList.contains('active')) {
+            planchosen = true
+        }        
+    });
+    return planchosen
 }
 function planbutton() {
     var buttons = document.querySelectorAll('.col.plan button')
@@ -113,7 +119,6 @@ function planbutton() {
             el.classList.add('active')
             var other_buttons = [...buttons]
             other_buttons.splice(index, 1)
-            // console.log(other_buttons)
             other_buttons.forEach(element => {
                 element.classList.remove('active')
             });
@@ -126,7 +131,6 @@ function checkplan(el) {
     var monthly = ['$9/mo', '$12/mo', '$15/mo']
 
     var check = el.checked
-    // console.log(check)
     
     const additional = document.querySelectorAll('.plan-additional')
 
@@ -147,7 +151,6 @@ function checkplan(el) {
             element.classList.remove('active')
         });
         var chosen = monthly
-
     }
     const price = document.querySelectorAll('.plan-price')
     for (i=0; i<3; i++) {
@@ -168,7 +171,6 @@ function storeStepThree(params) {
 
     for (i=0; i<add_ons.length; i++) {
         add_ons[i].innerHTML = chosen[i]
-        // console.log(chosen[i])
     }
 }
 /* DISPLAY STEP 3 (END)*/
@@ -186,6 +188,7 @@ function populateDataForStepFour() {
     var plantitle = planmonthly ? plan + ' (Monthly)' :plan + ' (Yearly)' 
     document.querySelector('#plan-name').innerHTML = plantitle
     document.querySelector('.final-plan-price').innerHTML = chosenplanperiod[plan]
+    var total = parseInt(chosenplanperiod[plan].replace(/\D/g, ''))
     const parent = document.getElementById('final_add_on_container')
     parent.innerHTML = ''
     chosen_add_on.forEach(el => {
@@ -205,14 +208,16 @@ function populateDataForStepFour() {
             default:
                 break;
         }
+        total += parseInt(add_on_price.replace(/\D/g, ''))
+
         var final_add_on = document.createElement('div')
 
         final_add_on.innerHTML = '<span class="add-on-title">' + title + '</span><span class="final-add-on-price">' + add_on_price + '</span>'
         final_add_on.classList.add('d-flex', 'final-add-on')
-        console.log(final_add_on)
         parent.appendChild(final_add_on)
     });
-
+    document.querySelector('.total-price .price').innerHTML = planmonthly ?'$' + total + '/mo':'$' + total + '/yr'
+    document.querySelector('.total-price .text').innerHTML = planmonthly ? 'Total (per month)' : 'Total (per year)'
 }
 /* POPULATE DATA FOR STEP 4 (END)*/
 
@@ -221,7 +226,6 @@ function addonclick(event) {
     var add_on = ""
     if (this.hasAttribute('type')) {
         var checkbox = this
-        // console.log(checkbox)
         add_on = this.name
     }
     else {
@@ -236,7 +240,6 @@ function addonclick(event) {
     else {
         chosen_add_on.splice(index, 1)
     }
-    // console.log(chosen_add_on)
     checkbox.checked = !checkbox.checked
     this.classList.toggle('active')
 }
@@ -244,7 +247,6 @@ function addonclick(event) {
 const add_ons = document.querySelectorAll('.add-on-container')
 const add_ons_checkbox = document.querySelectorAll('.add-on-container input')
 
-// add_ons_checkbox.addEventListener('click', addonclick)
 add_ons.forEach(element => {
     element.addEventListener('click', addonclick)
 });

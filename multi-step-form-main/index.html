@@ -12,10 +12,10 @@
 </head>
 <body>
   <div class="container mt-md-5" id="form-modal">
-    <div class="row p-md-3 justify-content-between">
+    <div class="row p-md-3">
       <!-- sidebar -->
       <div class="col-12 col-md-4" id="sidebar">
-        <div class="h-100 p-3 text-uppercase" >
+        <div class="h-100 p-3 text-uppercase mt-md-4" >
           <!-- Sidebar start -->
           <div class="step step1">
             <div class="step-circle active">1</div>
@@ -50,7 +50,7 @@
         </div>
       </div>
       <!-- form tabs -->
-      <div class="col-12 col-md-8">
+      <div class="col-12 col-md" id="mobile-form-container">
         <form action="" class="formclass">
           <!-- Step 1 -->
           <div class="form-tab active" id="form-tab-1">
@@ -180,7 +180,7 @@
               <div class="plan d-flex">
                 <div class="plan-text">
                   <div id="plan-name">Arcade (Yearly)</div>
-                  <a href="">Change</a>
+                  <button id="changebutton" type="button" onclick="tab2(this)">Change</button>
                 </div>
                 <div class="final-plan-price">$90</div>
               </div>

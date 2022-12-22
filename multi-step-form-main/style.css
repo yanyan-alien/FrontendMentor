@@ -3,13 +3,11 @@
     font-weight: 400;
     src: url('assets/fonts/Ubuntu-Regular.ttf');
 }
-
 @font-face {
     font-family: 'Ubuntu';
     font-weight: 500;
     src: url('assets/fonts/Ubuntu-Medium.ttf');
 }
-
 @font-face {
     font-family: 'Ubuntu';
     font-weight: 700;
@@ -36,6 +34,9 @@
 
     /* bootstrap  */
     --bs-body-color: hsl(213, 96%, 18%);
+
+    /* customised */
+    --hover: #184c8c;
 }
 html, body {
     font-family: var(--font-family);
@@ -89,16 +90,12 @@ h2 {
   height: 100%;
   position: relative;
 }
-/* .form-tab {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-} */
 .form-tab {
   opacity: 1;
   transition: opacity 0.15s linear;
   padding-top: 2rem;
   padding-right: 5rem;
+  padding-left: 5rem;
   height: 100%;
   position: relative;
 }
@@ -145,7 +142,6 @@ h2 {
   letter-spacing: 0.5px;
   line-height: 15px;
   color: var(--light-gray);
-
 }
 .step-title {
   font-weight: 500;
@@ -154,7 +150,6 @@ h2 {
   letter-spacing: 1px;
 }
 .btn {
-  /* margin: auto 0; */
   --bs-btn-padding-x: 1.2rem ;
   --bs-btn-padding-y: 0.5rem ;
 }
@@ -170,7 +165,6 @@ h2 {
   padding-left: 0;
 }
 .btn-primary:focus, .btn-primary:active, .btn-primary:hover {
-  --hover: #184c8c;
   background-color: var(--hover);
   border-color: var(--hover);
 }
@@ -183,7 +177,6 @@ h2 {
   background-color: var(--purplish-blue);
   border-color: var(--purplish-blue);
 }
-
 .col.plan button{
   border: 1px solid var(--cool-gray);
   background-color: var(--white);
@@ -213,12 +206,9 @@ h2 {
   border: solid 2px var(--cool-gray);
   box-shadow: none;
 }
-
 .addon-button:focus, .addon-button:active, .addon-button:hover {
   border-color: var(--purplish-blue);
-  /* background-color: var(--alabaster); */
 }
-
 .addon-button input:checked[type=checkbox] {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
 }
@@ -239,7 +229,6 @@ h2 {
 .plan-additional {
   color: var(--marine-blue);
 }
-
 .planperiod {
   padding: 1.05rem;
   border-radius: 0.5rem;
@@ -279,11 +268,16 @@ h2 {
   color: var(--marine-blue);
 }
 #summary {
-  /* background-color: var(--cool-gray); */
   background-color: #faf9fe;
   border-radius: 0.5rem;
   padding: 1rem;
   padding-bottom: 0rem;
+}
+#changebutton {
+  all: unset;
+  text-decoration: underline;
+  color: var(--cool-gray);
+  cursor: pointer;
 }
 #summary .plan {
   justify-content: space-between;
@@ -304,7 +298,7 @@ h2 {
   color: var(--marine-blue);
 }
 .add-on-container {
-  border: 1px solid var(--cool-gray);
+  border: 1px solid var(--light-gray);
   display: flex;
   padding: 1.2rem;
   cursor: pointer;
@@ -355,11 +349,17 @@ h2 {
 .final-add-on-price {
   font-weight: 500;
 }
+#form-tab-5 p {
+  color: var(--cool-gray);
+}
 /* NAMING */
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
 @media screen and (max-width:768px) {
+  #mobile-form-container {
+    background-color: var(--Magnolia);
+  }
   #sidebar {
     background-image: url('assets/images/bg-sidebar-mobile.svg');
     min-height: 172px;
@@ -373,7 +373,6 @@ h2 {
   }
   #form-modal {
     max-width: unset;
-
   }
   #sidebar .h-100.p-3.text-uppercase {
     display: flex;
@@ -389,21 +388,17 @@ h2 {
     padding: 1.5rem;
     max-width: 410px;
   }
-  #sidebar ~ .col-12.col-md-8 {
-    background-color: var(--Magnolia);
-  }
   .col.plan button {
     margin-top: 0;
     margin-bottom: 0.7rem;
     display: flex;
-    /* justify-content: space-between; */
   }
   .col.plan button img {
-    /* align-self: center; */
     margin-right: 1.5rem;
   }
   #form-tab-5 {
     padding: 5.5rem 1.5rem;
+    height: unset;
   }
 }
 @media screen and (min-width:768.02px) {
@@ -416,10 +411,20 @@ h2 {
   .bottom {
     position: absolute;
     bottom: 0;
-    width: calc(100% - 5rem);
+    width: calc(100% - 10rem);
   }
   .bottom.right {
     width: unset;
     right: 5rem;
+  }
+  #form-tab-5 {
+    padding: 0 1.5rem;
+    padding-top: 8rem;
+  }
+  #form-tab-5 h2 {
+    padding: 1.5rem 0;
+  }
+  #form-tab-5 p {
+    padding: 0 1.5rem;
   }
 }
