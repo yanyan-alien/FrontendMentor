@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+/* - Homepage Items: 14px */
+/* - Detail Page: 16px  */
+/* - Weights: 300, 600, 800 */
+:root {
+    color-scheme: light dark;
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        --element_color: hsl(0, 0%, 100%);
+        --text-color: hsl(200, 15%, 8%);
+        --input_color: hsl(0, 0%, 52%);
+        --background: hsl(0, 0%, 98%)
+        /* shadow color */
+    }
+}
+@media (prefers-color-scheme: dark){
+    :root {
+        --element_color: hsl(209, 23%, 22%);
+        --text-color: hsl(0, 0%, 100%);
+        --input_color: hsl(0, 0%, 52%);
+        --background:  hsl(207, 26%, 17%);
+    }
+    .country_card, #region-select, #search-box {
+        background-color: var(--element_color);
+    }
+}
+body.dark {
+    --element_color: hsl(209, 23%, 22%);
+    --text-color: hsl(0, 0%, 100%);
+    --input_color: hsl(0, 0%, 52%);
+    --background:  hsl(207, 26%, 17%);
+}
+html, body {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: var(--background);
+    height: 100%;
+    transition: background-color ease-in 0.3s;
+}
+h2, .navbar-brand, div, span, button, select {
+    color: var(--text-color) !important;
+}
+.navbar {
+    background-color: var(--element_color);
+    border-bottom: #efefef 1px solid;
+    box-shadow: 3px 0px 5px 3px #efefef;
+}
+#home, #details {
+    margin-top: 2rem;
+}
+.navbar-brand {
+    font-weight: 800;
+}
+#search-box {
+    width: unset;
+}
+::placeholder {
+    color: var(--dark-gray-light);
+}
+#region-select {
+    width: unset;
+    cursor: pointer;
+}
+#search-box, #region-select, .country_card {
+border-color: transparent;
+box-shadow: 0 4px 8px 0 #efefef, 0 6px 20px 0 #efefef
+}
+
+#country-container, .wrapper {
+    margin-top: 1.5rem;
+}
+.country_card {
+    cursor: pointer;
+    transition: transform .3s ease-in;
+    transform: scale(1);
+}
+.country_card:hover {
+    transform: scale(1.1);
+}
+.country_card .card-body {
+    font-weight: 600;
+}
+.country_card .card-body .country-name{
+    font-weight: 800;
+    font-size: 18px;
+}
+.country_card .card-body span {
+    font-weight: 300;
+}
+.text_wrapper {
+    margin-left: 5rem;
+    margin-top: 3rem;
+}
+#border_countries {
+    margin-top: 3rem;
+}
