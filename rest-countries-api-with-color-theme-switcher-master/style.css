@@ -10,8 +10,10 @@
         --element_color: hsl(0, 0%, 100%);
         --text-color: hsl(200, 15%, 8%);
         --input_color: hsl(0, 0%, 52%);
-        --background: hsl(0, 0%, 98%)
+        --background: hsl(0, 0%, 98%);
         /* shadow color */
+
+        --shadow: #efefef;
     }
 }
 @media (prefers-color-scheme: dark){
@@ -20,30 +22,39 @@
         --text-color: hsl(0, 0%, 100%);
         --input_color: hsl(0, 0%, 52%);
         --background:  hsl(207, 26%, 17%);
+        /* shadow color */
+
+        --shadow: hsl(209deg 21% 16%);
     }
-    .country_card, #region-select, #search-box {
-        background-color: var(--element_color);
-    }
+
 }
 body.dark {
     --element_color: hsl(209, 23%, 22%);
     --text-color: hsl(0, 0%, 100%);
     --input_color: hsl(0, 0%, 52%);
     --background:  hsl(207, 26%, 17%);
+    /* shadow color */
+
+    --shadow: hsl(209deg 21% 16%);
 }
 html, body {
+    height: 100%;
+}
+body {
     font-family: 'Nunito Sans', sans-serif;
     background-color: var(--background);
-    height: 100%;
-    transition: background-color ease-in 0.3s;
+    transition: background-color ease-in 0.3s, color ease-in 0.3s;
+}
+.country_card, #region-select, #search-box {
+    background-color: var(--element_color);
 }
 h2, .navbar-brand, div, span, button, select {
     color: var(--text-color) !important;
 }
 .navbar {
     background-color: var(--element_color);
-    border-bottom: #efefef 1px solid;
-    box-shadow: 3px 0px 5px 3px #efefef;
+    border-bottom: var(--shadow) 1px solid;
+    box-shadow: 3px 0px 5px 3px var(--shadow);
 }
 #home, #details {
     margin-top: 2rem;
@@ -55,15 +66,15 @@ h2, .navbar-brand, div, span, button, select {
     width: unset;
 }
 ::placeholder {
-    color: var(--dark-gray-light);
+    color: var(--input_color);
 }
 #region-select {
     width: unset;
     cursor: pointer;
 }
 #search-box, #region-select, .country_card {
-border-color: transparent;
-box-shadow: 0 4px 8px 0 #efefef, 0 6px 20px 0 #efefef
+    border-color: transparent;
+    box-shadow: 0 4px 8px 0 var(--shadow), 0 6px 20px 0 var(--shadow);
 }
 
 #country-container, .wrapper {
