@@ -26,9 +26,14 @@
 
         --shadow: hsl(209deg 21% 16%);
     }
-
+    #region-select  {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    }
 }
-body.dark {
+.dark #region-select  {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+html.dark {
     --element_color: hsl(209, 23%, 22%);
     --text-color: hsl(0, 0%, 100%);
     --input_color: hsl(0, 0%, 52%);
@@ -40,21 +45,31 @@ body.dark {
 html, body {
     height: 100%;
 }
+/* * {
+    transition:  color ease-in-out 1s;
+} */
 body {
     font-family: 'Nunito Sans', sans-serif;
     background-color: var(--background);
-    transition: background-color ease-in 0.3s, color ease-in 0.3s;
+    transition: background-color ease-in-out 0.7s
 }
+
 .country_card, #region-select, #search-box {
     background-color: var(--element_color);
+    transition: background-color ease-in-out 0.8s;
 }
 h2, .navbar-brand, div, span, button, select {
     color: var(--text-color) !important;
 }
 .navbar {
     background-color: var(--element_color);
-    border-bottom: var(--shadow) 1px solid;
+    border-bottom: 1px solid;
+    border-color: var(--shadow);
     box-shadow: 3px 0px 5px 3px var(--shadow);
+    transition: background-color ease-in-out 0.7s, border-color ease-in-out 0.7s, box-shadow ease-in-out 0.7s;
+}
+#theme-switcher {
+    border: none;
 }
 #home, #details {
     margin-top: 2rem;
@@ -62,8 +77,17 @@ h2, .navbar-brand, div, span, button, select {
 .navbar-brand {
     font-weight: 800;
 }
+#functions-container {
+    position: relative;
+}
 #search-box {
     width: unset;
+    padding-left: 2.5rem;
+}
+#search-box-icon {
+    position: absolute;
+    top: 8.9px;
+    left: 10.5px;
 }
 ::placeholder {
     color: var(--input_color);
@@ -71,12 +95,23 @@ h2, .navbar-brand, div, span, button, select {
 #region-select {
     width: unset;
     cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e")
 }
 #search-box, #region-select, .country_card {
     border-color: transparent;
     box-shadow: 0 4px 8px 0 var(--shadow), 0 6px 20px 0 var(--shadow);
-}
+    transition:  box-shadow ease-in-out 0.6s;
 
+}
+.btn.back-btn {
+    padding: 0.3rem 2rem;
+}
+.btn.custom-btn {
+    background-color: var(--element_color);
+    box-shadow: 0 4px 8px 0 var(--shadow), 0 6px 20px 0 var(--shadow);
+    transition: background-color ease-in-out 0.7s, box-shadow ease-in-out 0.7s;
+    border: none;
+}
 #country-container, .wrapper {
     margin-top: 1.5rem;
 }
@@ -102,6 +137,23 @@ h2, .navbar-brand, div, span, button, select {
     margin-left: 5rem;
     margin-top: 3rem;
 }
+.text_wrapper .col div {
+    font-weight: 600;
+}
+.text_wrapper .col div span {
+    font-weight: 300;
+}
 #border_countries {
     margin-top: 3rem;
+}
+@media screen and (max-width:539.98px) {
+    .text_wrapper {
+        margin-left: 0;
+    }
+    .container {
+        --bs-gutter-x: 2rem;
+    }
+    .country_card:hover {
+        transform: scale(1.02);
+    }
 }

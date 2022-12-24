@@ -14,12 +14,12 @@ This repository contains some challenges from [Frontend Mentors](https://www.fro
 
 |Name|Difficulty| Technologies / Approaches |
 |---|---|---|
-|  [NFT Card Preview Component](https://yanyan-alien.github.io/FrontendMentor/NFT%20Card%20Preview%20Component/index.html) | :star:   | HTML, CSS |
-|  [Stats Preview Card Component](https://yanyan-alien.github.io/FrontendMentor/Stats%20Preview%20Card%20Component/index.html) | :star:   | HTML, CSS, Mobile First |
-|  [Order Summary Component](https://yanyan-alien.github.io/FrontendMentor/order-summary-component-main/index.html) | :star:   | HTML, CSS, Mobile First |
+|  [NFT Card Preview Component](https://yanyan-alien.github.io/FrontendMentor/NFT%20Card%20Preview%20Component/) | :star:   | HTML, CSS |
+|  [Stats Preview Card Component](https://yanyan-alien.github.io/FrontendMentor/Stats%20Preview%20Card%20Component/) | :star:   | HTML, CSS, Mobile First |
+|  [Order Summary Component](https://yanyan-alien.github.io/FrontendMentor/order-summary-component-main/) | :star:   | HTML, CSS, Mobile First |
 |  [FAQ Accordion Card](https://yanyan-alien.github.io/FrontendMentor/faq-accordion-card-main/index.html) | :star:   | HTML, CSS, JavaScript, Mobile First |
-|  [Article Preview Component](https://yanyan-alien.github.io/FrontendMentor/article-preview-component-master/index.html) | :star:   | HTML, CSS, JavaScript, Mobile First |
-|  [Profile Card Component](https://yanyan-alien.github.io/FrontendMentor/profile-card-component-main/index.html) | :star:   | HTML, CSS |
-|  [Multi Step Form Component](https://yanyan-alien.github.io/FrontendMentor/multi-step-form-main/index.html) | :star: :star: :star:  | HTML, CSS, BootStrap5 |
-<!-- |  [Multi Step Form Component](https://yanyan-alien.github.io/FrontendMentor/multi-step-form-main/index.html) | :star: :star: :star:  | HTML, CSS, BootStrap5 |
-|  [Multi Step Form Component](https://yanyan-alien.github.io/FrontendMentor/multi-step-form-main/index.html) | :star: :star: :star:  | HTML, CSS, BootStrap5 | -->
+|  [Article Preview Component](https://yanyan-alien.github.io/FrontendMentor/article-preview-component-master/) | :star:   | HTML, CSS, JavaScript, Mobile First |
+|  [Profile Card Component](https://yanyan-alien.github.io/FrontendMentor/profile-card-component-main/) | :star:   | HTML, CSS |
+|  [Multi Step Form Component](https://yanyan-alien.github.io/FrontendMentor/multi-step-form-main/) | :star: :star: :star:  | HTML, CSS, JavaScript, BootStrap5 |
+|  [Rest Countries API with Color Theme](https://yanyan-alien.github.io/FrontendMentor/rest-countries-api-with-color-theme-switcher-master/) | :star: :star: :star:  | HTML, CSS, JavaScript, BootStrap5, API |
+<!-- |  [Multi Step Form Component](https://yanyan-alien.github.io/FrontendMentor/multi-step-form-main/index.html) | :star: :star: :star:  | HTML, CSS, BootStrap5 | -->
