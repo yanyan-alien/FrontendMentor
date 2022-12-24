@@ -99,6 +99,8 @@ function retrieve_data() {
     var lang_keys = Object.keys(el['name']['nativeName'])
     var currency = Object.keys(el['currencies'])
     var border_countries = JSON.parse(localStorage.getItem('border_countries'))
+    console.log(el)
+    console.log(border_countries)
 
     document.querySelector('#details img[alt="country_flag"]').src = el['flags']['png']
     document.querySelector('#details .country_name').innerHTML = el['name']['common']
