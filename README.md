@@ -21,5 +21,5 @@ This repository contains some challenges from [Frontend Mentors](https://www.fro
 |  [Article Preview Component](https://yanyan-alien.github.io/FrontendMentor/article-preview-component-master/) | :star:   | HTML, CSS, JavaScript, Mobile First |
 |  [Profile Card Component](https://yanyan-alien.github.io/FrontendMentor/profile-card-component-main/) | :star:   | HTML, CSS |
 |  [Multi Step Form Component](https://yanyan-alien.github.io/FrontendMentor/multi-step-form-main/) | :star: :star: :star:  | HTML, CSS, JavaScript, BootStrap5 |
-|  [Rest Countries API with Color Theme](https://yanyan-alien.github.io/FrontendMentor/rest-countries-api-with-color-theme-switcher-master/) | :star: :star: :star:  | HTML, CSS, JavaScript, BootStrap5, API |
-<!-- |  [Multi Step Form Component](https://yanyan-alien.github.io/FrontendMentor/multi-step-form-main/index.html) | :star: :star: :star:  | HTML, CSS, BootStrap5 | -->
+|  [Calculator App](https://yanyan-alien.github.io/FrontendMentor/calculator-app-main) | :star: :star: :star:  | HTML, CSS, BootStrap5, JavaScript |
+|  [Rest Countries API with Color Theme](https://yanyan-alien.github.io/FrontendMentor/rest-countries-api-with-color-theme-switcher-master/) | :star: :star: :star: :star: | HTML, CSS, JavaScript, BootStrap5, API |

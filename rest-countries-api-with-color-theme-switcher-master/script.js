@@ -1,5 +1,4 @@
 var countries;
-var test;
 var githubpages = true
 var home_query = '?fields=cca2,ccn3,cca3,cioc,flags,name,population,region,capital'
 var detail_query = '?fields=cca2,ccn3,cca3,cioc,flags,name,population,region,subregion,capital,borders,languages,tld,currencies'
@@ -23,9 +22,9 @@ function home_initialise() {
     fetch(`https://restcountries.com/v3.1/all${home_query}`)
     .then((res) => res.json())
     .then(data => {
-        console.log(data[10])
+        // console.log(data[10])
         initialise_countries(data)
-        details_redirect()
+        card_click()
     })
 }
 
@@ -46,52 +45,52 @@ function initialise_countries(data) {
     countries = document.querySelectorAll('.card')
 }
 
-function details_redirect() {
+function card_click() {
     countries.forEach(el => {
         el.addEventListener('click', () => {
             var code = el.getAttribute('value')
-            fetch(`https://restcountries.com/v3.1/alpha/${code}${detail_query}`)
-            .then((res) => res.json())
-            .then(el => {
-                var border_countries = []
-                if (el['borders'].length > 0) {
-                    for (let i = 0; i < el['borders'].length; i++) {
-                        fetch(`https://restcountries.com/v3.1/alpha/${el['borders'][i]}?fields=name`)
-                        .then((res) => res.json())
-                        .then(data => {
-                            border_countries.push(data['name']['common'])
-                            localStorage.setItem('border_countries', JSON.stringify(border_countries))
-                        })                
-                    }
-                }
-                else localStorage.setItem('border_countries', JSON.stringify(border_countries))
-                localStorage.setItem('country_data', JSON.stringify(el))
-            })
-            fetchdetails(code)
+            get_details_and_redirect(code)
         })    
     });
 }
-function fetchdetails(code) {
+function get_borders(borders) {
+    var res = []
+    borders.forEach(border=> {
+        res.push(
+            fetch(`https://restcountries.com/v3.1/alpha/${border}?fields=name`)
+            .then((res) => res.json())
+            .then(data=> data['name']['common'])
+        )
+    })
+    return Promise.all(res)
+}
+function get_details_and_redirect(code, redirect=true) {
+    // console.log('in click 2nd function')
     fetch(`https://restcountries.com/v3.1/alpha/${code}${detail_query}`)
     .then((res) => res.json())
     .then(el => {
-        var border_countries = []
         if (el['borders'].length > 0) {
-            for (let i = 0; i < el['borders'].length; i++) {
-                fetch(`https://restcountries.com/v3.1/alpha/${el['borders'][i]}?fields=name`)
-                .then((res) => res.json())
-                .then(data => {
-                    border_countries.push(data['name']['common'])
-                    localStorage.setItem('border_countries', JSON.stringify(border_countries))
-                })                
-            }
+            get_borders(el['borders'])
+            .then((res)=> {
+                console.log(res)
+                localStorage.setItem('border_countries', JSON.stringify(res))
+                localStorage.setItem('country_data', JSON.stringify(el))
+                // return [res, el]
+                if (githubpages) window.location.href = '/FrontendMentor/rest-countries-api-with-color-theme-switcher-master/details.html'
+                else window.location.href = '/rest-countries-api-with-color-theme-switcher-master/details.html'    
+            })
         }
-        else localStorage.setItem('border_countries', JSON.stringify(border_countries))
-        localStorage.setItem('country_data', JSON.stringify(el))
-        if (githubpages) window.location.href = '/FrontendMentor/rest-countries-api-with-color-theme-switcher-master/details.html'
-        else window.location.href = '/rest-countries-api-with-color-theme-switcher-master/details.html'
-        
+        else {
+            localStorage.setItem('border_countries', JSON.stringify([]))
+            localStorage.setItem('country_data', JSON.stringify(el))
+            // return el
+            if (githubpages) window.location.href = '/FrontendMentor/rest-countries-api-with-color-theme-switcher-master/details.html'
+            else window.location.href = '/rest-countries-api-with-color-theme-switcher-master/details.html'    
+        }
     })
+    // .then((x)=>{
+    //     console.log(x)
+    // })
 }
 
 function retrieve_data() {
@@ -115,34 +114,45 @@ function retrieve_data() {
 
     if (border_countries.length > 0) {
         var i = 0
-        var border_countries_container = document.querySelector('#border_countries h4')
+        var border_countries_container = document.querySelector('#border_countries')
+        // border_countries_container.innerHTML=''
         border_countries.forEach(country => {
             var borderbutton = document.createElement('button')
             borderbutton.innerHTML = country
-            borderbutton.classList.add('btn', 'custom-btn')
+            borderbutton.classList.add('btn', 'custom-btn', 'border-btn')
             borderbutton.value = el['borders'][i]
             i++
             border_countries_container.appendChild(borderbutton)
-            borderbutton.addEventListener('click', ()=>{
-                fetchdetails(borderbutton.value)
-            })
+            // borderbutton.addEventListener('click', ()=>{
+            //     get_details_and_redirect(borderbutton.value)
+            // })
         });
     }
 }
+var border_countries = document.querySelectorAll('.custom-btn.border-btn')
+border_countries.forEach(btn => {
+    btn.addEventListener('click', ()=>{
+        get_details_and_redirect(btn.value, false)
+    })
+});
 
 function filter(el) {
+    // console.log(el.value !== '' && el.id)
     var url = `https://restcountries.com/v3.1/region/${el.value}${home_query}`
-    if (el.value == 'all') {
-        url = `https://restcountries.com/v3.1/all${home_query}`
-    }
+    if (el.value == 'all') url = `https://restcountries.com/v3.1/all${home_query}`
+    else if (el.id=='search-box' && el.value !== '') url = `https://restcountries.com/v3.1/name/${el.value}${home_query}`
     fetch(url)
-    .then((res) => res.json())
+    .then((res) => {
+        if (!res.ok) throw Error(res.status)
+        return res.json()
+    })
     .then(data => {
         container.innerHTML = ''
         initialise_countries(data)
         countries = document.querySelectorAll('.card')
-        details_redirect()
+        card_click()
     })
+    .catch(error=>console.log(error))
 }
 
 function create_card(country_code, image, name, population, region, capital) {

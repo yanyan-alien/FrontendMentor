@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+:root {
+    color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+    body {
+        --main: hsl(222, 26%, 31%);
+        --toggle: hsl(223, 31%, 20%);
+        --screen: hsl(224, 36%, 15%);
+    
+        --key-bg: hsl(225, 21%, 49%);
+        --key-shadow: hsl(224, 28%, 35%);
+        
+        --key-bg-toggle: hsl(6, 63%, 50%);
+        --key-shadow-toggle: hsl(6, 70%, 34%);
+    
+        --main-key: hsl(30, 25%, 89%);
+        --main-key-shadow: hsl(28, 16%, 65%);
+    
+        --primary-text: hsl(221, 14%, 31%);
+        --secondary-text: hsl(0, 0%, 100%);
+
+        --hover-function: #a2b3e1;
+        --hover-highlight: #f96c5b;
+        --hover-main: hsl(0, 0%, 100%);
+    }
+}
+@media (prefers-color-scheme: light) {
+    body {
+        --main: hsl(0, 0%, 90%);
+        --toggle: hsl(0, 5%, 81%);
+        --screen: hsl(0, 0%, 93%);
+    
+        --key-bg: hsl(185, 42%, 37%);
+        --key-shadow: hsl(185, 58%, 25%);
+        
+        --key-bg-toggle: hsl(25, 98%, 40%);
+        --key-shadow-toggle: hsl(25, 99%, 27%);
+    
+        --main-key: hsl(45, 7%, 89%);
+        --main-key-shadow: hsl(35, 11%, 61%);
+    
+        --primary-text: hsl(60, 10%, 19%);
+        --secondary-text: hsl(0, 0%, 100%);
+
+        --hover-function: #62b5bd;
+        --hover-highlight: #ff8b38;
+        --hover-main: hsl(0, 0%, 100%);
+    }
+    .brand, .theme-container, #screen-text {
+        color: var(--primary-text);
+    }
+}
+.one {
+    --main: hsl(222, 26%, 31%);
+    --toggle: hsl(223, 31%, 20%);
+    --screen: hsl(224, 36%, 15%);
+
+    --key-bg: hsl(225, 21%, 49%);
+    --key-shadow: hsl(224, 28%, 35%);
+    
+    --key-bg-toggle: hsl(6, 63%, 50%);
+    --key-shadow-toggle: hsl(6, 70%, 34%);
+
+    --main-key: hsl(30, 25%, 89%);
+    --main-key-shadow: hsl(28, 16%, 65%);
+
+    --primary-text: hsl(221, 14%, 31%);
+    --secondary-text: hsl(0, 0%, 100%);
+
+    --hover-function: #a2b3e1;
+    --hover-highlight: #f96c5b;
+    --hover-main: hsl(0, 0%, 100%);
+}
+.one .brand, .one .theme-container, .one #screen-text {
+    color: var(--secondary-text);
+}
+.two {
+    --main: hsl(0, 0%, 90%);
+    --toggle: hsl(0, 5%, 81%);
+    --screen: hsl(0, 0%, 93%);
+
+    --key-bg: hsl(185, 42%, 37%);
+    --key-shadow: hsl(185, 58%, 25%);
+    
+    --key-bg-toggle: hsl(25, 98%, 40%);
+    --key-shadow-toggle: hsl(25, 99%, 27%);
+
+    --main-key: hsl(45, 7%, 89%);
+    --main-key-shadow: hsl(35, 11%, 61%);
+
+    --primary-text: hsl(60, 10%, 19%);
+    --secondary-text: hsl(0, 0%, 100%);
+
+    --hover-function: #62b5bd;
+    --hover-highlight: #ff8b38;
+    --hover-main: hsl(0, 0%, 100%);
+}
+.two .brand, .two .theme-container, .two #screen-text {
+    color: var(--primary-text);
+}
+.three {
+    --main: hsl(268, 75%, 9%);
+    --toggle: hsl(268, 71%, 12%);
+    --screen: hsl(268, 71%, 12%);
+
+    --key-bg: hsl(281, 89%, 26%);
+    --key-shadow: hsl(285, 91%, 52%);
+    
+    --key-bg-toggle: hsl(176, 100%, 44%);
+    --key-shadow-toggle: hsl(177, 92%, 70%);
+
+    --main-key: hsl(268, 47%, 21%);
+    --main-key-shadow: hsl(290, 70%, 36%);
+
+    --primary-text: hsl(52, 100%, 62%);
+    --secondary-text: hsl(198, 20%, 13%);
+    --btn-function-color: hsl(0, 0%, 100%);
+
+    --hover-function: #8631b0;
+    --hover-highlight: #94fff9;
+    --hover-main: #6b34ac;
+}
+.three .brand, .three .theme-container, .three #screen-text {
+    color: var(--primary-text);
+}
+.three .btn-function {
+    color: var(--btn-function-color) !important;
+}
+html, body {
+    height: 100%;
+}
+body, #root {
+    background-color: var(--main);
+    transition: 0.2s ease-in background-color;
+}
+#root {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.brand {
+    font-size: 28px;
+}
+.theme-container {
+    display: flex;
+    align-items:flex-end;
+    justify-content: end;
+}
+.theme-text {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-align: right;
+    margin-right: 2rem;
+}
+#switches {
+    background-color: var(--toggle);
+    border-radius: 1rem;
+}
+#switches .col {
+    display: flex;
+}
+input[type='radio'] {
+    appearance: none;
+    margin: 4px 0px;
+    width: 15px;
+    height: 15px;
+    background-color: var(--toggle);
+    border-radius: 50%;
+}
+input[type='radio']:checked:hover {
+    background-color: var(--hover-highlight);
+}
+input[type='radio']:checked {
+    background-color: var(--key-bg-toggle);
+}
+input[type='radio'], label {
+    cursor: pointer;
+}
+label {
+    text-align: center ;
+    font-size: 13px;
+}
+#calculator-container {
+    display: initial;
+    color: var(--secondary-text);
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    margin-top: 5rem;
+}
+.screen {
+    min-height: 150px;
+    padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+    border-radius: 0.4rem;
+    background-color: var(--screen);
+    color: var(--secondary-text);
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    transition: 0.3s ease-in-out background-color;
+}
+.btn-container {
+    border-radius: 0.4rem;
+    background-color: var(--toggle);
+    padding: 1.8rem 1.7rem;
+    transition: 0.3s ease-in-out background-color;
+}
+.btn-main {
+    --btn-color: var(--main-key);
+    --text: var(--primary-text);
+    --shadow-color: var(--main-key-shadow);
+    --hover-color: var(--hover-main);
+}
+.btn-function {
+    --btn-color: var(--key-bg);
+    --text: var(--secondary-text);
+    --shadow-color: var(--key-shadow);
+    font-size: 23px !important;
+    --hover-color: var(--hover-function);
+}
+.btn-highlight {
+    --btn-color: var(--key-bg-toggle);
+    --text: var(--secondary-text);
+    --shadow-color: var(--key-shadow-toggle);
+    font-size: 23px !important;
+    --hover-color: var(--hover-highlight);
+}
+.col .btn {
+    height: 100%;
+    width: 100%;
+    border-radius: 0.4rem;
+    font-size: 32px;
+    background-color: var(--btn-color);
+    border-color: var(--btn-color);
+    color: var(--text);
+    box-shadow: 0px 5px var(--shadow-color);
+    transition: background-color 0.3s ease-in, box-shadow 0.3s ease-in, color 0.3s ease-in, border-color 0.3s ease-in;
+}
+.btn:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+}
+.btn:active {
+    box-shadow: 0px 5px transparent;
+    background-color: var(--shadow-color) !important;
+    border-color: var(--shadow-color) !important;
+    color: var(--text) !important;
+}
+@media screen and (min-width:768px) {
+    .container {
+        max-width: 600px !important;
+    }
+}
+@media screen and (max-width:575.98px) {
+    .container {
+        padding: 0 2rem !important;
+    }
+    .screen {
+        min-height: 110px;
+        padding: 1rem 2rem;
+    }
+}

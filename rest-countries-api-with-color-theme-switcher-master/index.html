@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <a class="navbar-brand" href="/FrontendMentor/rest-countries-api-with-color-theme-switcher-master/">
+            <a class="navbar-brand" href="#">
                 Where in the world?
             </a>
             <span class="ms-auto btn" role="button" id="theme-switcher">
@@ -24,9 +24,9 @@
         </div>
     </nav>
     <div class="container" id="home">
-        <div class="d-flex justify-content-between" id="functions-container">
-            <i class=" fa-solid  fa-magnifying-glass" id="search-box-icon"></i>
-            <input class="form-control" placeholder="Search for a country" id="search-box"/>
+        <div class="row justify-content-between gy-3" id="functions-container">
+            <!-- <i class=" fa-solid  fa-magnifying-glass" id="search-box-icon"></i> -->
+            <input class="form-control" placeholder="Search for a country" id="search-box" onkeyup="filter(this)"/>
             <select name="region-select" id="region-select" class="form-select" aria-label="Region Filter" onchange="filter(this)">
                 <option value="all" > Filter by Region</option>
                 <option value="africa">Africa</option>

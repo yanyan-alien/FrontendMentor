@@ -81,8 +81,10 @@ h2, .navbar-brand, div, span, button, select {
     position: relative;
 }
 #search-box {
+    color: var(--text-color);
     width: unset;
-    padding-left: 2.5rem;
+    /* padding: 0.8rem 0; */
+    /* padding-left: 3rem; */
 }
 #search-box-icon {
     position: absolute;
@@ -93,6 +95,8 @@ h2, .navbar-brand, div, span, button, select {
     color: var(--input_color);
 }
 #region-select {
+    /* padding: 0 1.5rem; */
+    /* margin-right: 1rem; */
     width: unset;
     cursor: pointer;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e")
@@ -112,7 +116,16 @@ h2, .navbar-brand, div, span, button, select {
     transition: background-color ease-in-out 0.7s, box-shadow ease-in-out 0.7s;
     border: none;
 }
+.border-btn {
+    margin: 0 0.5rem;
+}
+.container .row {
+    margin-left: 0;
+    margin-right: 0;
+}
 #country-container, .wrapper {
+    margin-left: 0;
+    margin-right: 0;
     margin-top: 1.5rem;
 }
 .country_card {
@@ -133,12 +146,28 @@ h2, .navbar-brand, div, span, button, select {
 .country_card .card-body span {
     font-weight: 300;
 }
+.image-container {
+    display: flex;
+}
+.image-container img {
+    align-self: center;
+    width: 100%;
+}
 .text_wrapper {
-    margin-left: 5rem;
-    margin-top: 3rem;
+    margin-left: 3rem;
+    /* margin-top: 3rem; */
 }
 .text_wrapper .col div {
     font-weight: 600;
+}
+h2.country_name, #border_countries h4 {
+    font-weight: 800;
+}
+.country_info {
+    margin-top: 0rem;
+}
+.country_info .col div {
+    margin-bottom: 0.2rem;
 }
 .text_wrapper .col div span {
     font-weight: 300;
@@ -146,12 +175,18 @@ h2, .navbar-brand, div, span, button, select {
 #border_countries {
     margin-top: 3rem;
 }
-@media screen and (max-width:539.98px) {
+button.border-btn:first-child {
+    margin-left: 0;
+}
+@media screen and (max-width:575.98px) {
     .text_wrapper {
         margin-left: 0;
     }
-    .container {
+    .container{
         --bs-gutter-x: 2rem;
+    }
+    #functions-container.row {
+        --bs-gutter-x: 0rem;
     }
     .country_card:hover {
         transform: scale(1.02);
